@@ -8,7 +8,7 @@ const { loadModel } = require('./services/loadModel')
 require('dotenv').config()
 
 
-const { HOST, PORT } = process.env;
+const { APP_HOST, APP_PORT } = process.env;
 
 (async () => {
     app.locals.model = await loadModel()
@@ -29,6 +29,8 @@ app.get('/', async (req, res) => {
     res.send('Berhasil')
 })
 
-app.listen(PORT, () => {
-    console.log(`Running server at ${HOST}:${PORT}`)
+const port = APP_PORT || 8080
+
+app.listen(port, () => {
+    console.log(`Running server at ${APP_HOST}:${APP_PORT || 8080}`)
 })

@@ -1,11 +1,14 @@
 const { Firestore } = require('@google-cloud/firestore')
+const path = require('path')
+
+const key = path.join(__dirname, '../../service-account.json')
 require('dotenv').config()
 
-const { PROJECT_ID, GOOGLE_APPLICATION_CREDENTIALS, DB } = process.env
+const { PROJECT_ID, DB } = process.env
 
 const db = new Firestore({
     projectId: PROJECT_ID,
-    keyFilename: GOOGLE_APPLICATION_CREDENTIALS,
+    keyFilename: key,
     databaseId: DB
 })
 const predictCollection = db.collection('prediction')

@@ -10,9 +10,9 @@ COPY . .
 
 ENV APP_HOST=0.0.0.0
 ENV APP_PORT=8080
-ENV MODEL_URL=https://storage.googleapis.com/themodels/model/model.json
-ENV PROJECT_ID=submissionmlgc-saddam
-ENV DB=default
+ENV MODEL_URL=[MODEL_URL]
+ENV PROJECT_ID=[PROJECT_ID]
+ENV DB=[DB_FIRESTORE]
 
 EXPOSE 8080
 
